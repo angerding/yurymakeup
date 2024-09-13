@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Shantell Sans", cursive;
+}
+
+body {
+  background-color: #fff8f8;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  display: block;
+}
+
+header {
+  background: black;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  position: fixed;
+  z-index: 9;
+  top: 0;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+nav {
+  color: #ffe;
+}
+
+.menu {
+  width: 100%;
+  margin: 0 auto;
+}
+
+ul li {
+  display: inline;
+  list-style: none;
+  margin: 10px;
+}
+
+img {
+  height: 40px;
+  float: left;
+  padding: 5px;
+}
+
+.btnnav {
+  margin-right: 20px;
+  align-items: center;
+  background: #FFFFFF;
+  border: 0 solid #E2E8F0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  color: #1A202C;
+  display: inline-flex;
+  font-family: Inter, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  height: 16px;
+  justify-content: center;
+  line-height: 24px;
+  overflow-wrap: break-word;
+  padding: 16px;
+  text-decoration: none;
+  width: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  background-color: white;
+  padding: 20px;
+  margin: auto;
+  border-radius: 8px;
+}
+
+.text-section {
+  flex: 1;
+  padding-right: 20px;
+  width: 50%;
+}
+
+.text-section h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #333;
+}
+
+.text-section p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.carousel-container {
+  width: 50%;
+  display: flex;
+  gap: 20px;
+  flex: 2;
+  position: relative;
+}
+
+.carousel {
+  overflow: hidden;
+  width: 400px;
+  /* Ancho del carrusel */
+  height: 400px;
+  /* Alto del carrusel */
+  position: relative;
+}
+
+.carousel-inner {
+  display: flex;
+  flex-direction: column;
+  height: 200%;
+  /* Ajusta según el número de imágenes */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+  /* Ajusta la opacidad para unir las imágenes con el fondo blanco */
+}
+
+.carousel::before,
+.carousel::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  /* Ajusta la altura del área de desvanecimiento según tus necesidades */
+  pointer-events: none;
+  z-index: 1;
+}
+
+.carousel::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.carousel::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.carousel-down .carousel-inner {
+  animation: slide-down 20s linear infinite;
+}
+
+.carousel-up .carousel-inner {
+  animation: slide-up 10s linear infinite;
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-50%);
+    /* Ajusta según el número de imágenes */
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-50%);
+    /* Ajuste: Se desplaza hacia arriba para ocultar el contenido */
+  }
+}
+
+
+
+article {
+  display: inline;
+  max-width: 1200px;
+  margin: auto;
+  display: inline-block;
+  justify-content: center;
+  flex-direction: row;  
+}
+
+
+ 
+ .card-img-top{
+  width: auto;
+  height: 280px;
+ }
+ .card-details {
+  color: black;
+  height: 100%;
+  gap: .5em;
+  display: grid;
+  place-content: center;
+ }
+ 
+
+ 
+ /*Hover*/
+ .card:hover {
+  border-color: #ffbed2;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+ }
+ 
+ .card:hover .card-button {
+  transform: translate(-50%, 50%);
+  opacity: 1;
+ }
